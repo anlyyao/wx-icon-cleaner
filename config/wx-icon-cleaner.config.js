@@ -6,9 +6,9 @@ module.exports = [
     usedIcons: ['accessibility-filled', 'app', 'home']
   },
   {
-    classPrefix: 'vat',
+    classPrefix: 'van',
     inputFile: './miniprogram/miniprogram_npm/@vant/icon/icon.wxss',
     outputFilt: '',
-    usedIcons: ['home']
+    usedIcons: ['flower-o']
   }
 ];
