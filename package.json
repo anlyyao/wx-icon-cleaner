@@ -2,6 +2,10 @@
   "name": "wx-icon-cleaner",
   "version": "0.0.1",
   "description": "A tool for cleaning unused icons from WeChat Mini Programs.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anlyyao/wx-icon-cleaner.git"
+  },
   "main": "./lib/index.js",
   "bin": {
     "wx-icon-cleaner": "./bin/cli.js"
@@ -19,6 +23,5 @@
     "iconfont",
     "cleaner"
   ],
-  "author": "anlyyao <anllyyao@gmail.com>",
   "license": "MIT"
 }

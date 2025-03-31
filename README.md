@@ -28,7 +28,7 @@ npx wx-icon-cleaner --config ./icon-cleaner.config.js
 module.exports = {
   classPrefix: 't', // 仅处理 t-icon 开头的图标，非 t-icon 开头的图标默认保留。默认值 t
   inputFile: './miniprogram/miniprogram_npm/tdesign-miniprogram/icon/icon.wxss', // 目标文件相对路径路径
-  outputFilt: '' // 输出文件路径，若未提供，默认覆盖目标文件路径
+  outputFile: '' // 输出文件路径，若未提供，默认覆盖目标文件路径
   usedIcons: ['accessibility-filled', 'app'] // 已使用图标组
 };
 ```
