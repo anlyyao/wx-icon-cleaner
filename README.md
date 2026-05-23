@@ -1,4 +1,72 @@
 # wx-icon-cleaner
+
+# ⚠️ 停止维护声明
+
+> **⚠️ 警告：该包已不再维护！请迁移至 [`@mp-svg-icons/utils`](https://www.npmjs.com/package/@mp-svg-icons/utils)。**
+
+---
+
+## ⚠️ 迁移指南
+
+本包 `wx-icon-cleaner` 已停止维护，不再更新。请改用 `@mp-svg-icons/utils`：
+
+```bash
+npm install @mp-svg-icons/utils
+```
+
+### 差异说明
+
+| | `wx-icon-cleaner`（旧） | `@mp-svg-icons/utils`（新） |
+| --- | --- | --- |
+| 功能 | 仅清理未使用的 iconfont 图标样式 | iconfont 图标裁剪 + SVG 图标裁剪 |
+| 支持平台 | 仅微信小程序 | 微信、支付宝、百度、抖音、快手、小红书、京东等 |
+| 支持组件库 | 仅 tdesign-miniprogram | tdesign-miniprogram、@vant/weapp 及其他 iconfont 组件库 |
+| 图标扫描 | 手动配置 `usedIcons` 列表 | 自动扫描项目目录，智能识别已使用图标 |
+| 配置文件 | 支持 `wx-icon-cleaner.config.js/json` | 不再需要配置文件，通过 CLI 参数传递 |
+| 使用方式 | CLI + Node API | CLI（`npx mp-iconfont-clear`）+ 编程调用 |
+| 预览模式 | 不支持 | 支持 `--dry-run` 预览裁剪结果 |
+
+> 💡 **提示**：`@mp-svg-icons/utils` 不再支持配置文件，所有参数通过 CLI 选项或编程接口传入。
+
+### 迁移示例
+
+**旧方式**（wx-icon-cleaner）：
+
+```js
+// wx-icon-cleaner.config.js
+module.exports = {
+  classPrefix: 't',
+  inputFile: './miniprogram_npm/tdesign-miniprogram/icon/icon.wxss',
+  usedIcons: ['home', 'close', 'check-circle']
+};
+```
+
+```bash
+npx wx-icon-cleaner --config ./wx-icon-cleaner.config.js
+```
+
+**新方式**（@mp-svg-icons/utils）：
+
+```bash
+# 自动扫描项目目录，识别已使用图标并裁剪
+npx mp-iconfont-clear \
+  --pkg-dir ./miniprogram_npm/tdesign-miniprogram \
+  --scan ./pages ./components
+
+# 或手动指定要保留的图标
+npx mp-iconfont-clear \
+  --pkg-dir ./miniprogram_npm/tdesign-miniprogram \
+  --icons home,close,check-circle
+```
+
+如有问题，请前往新包仓库提交 Issue：[miniprogram-svg-icons](https://github.com/anlyyao/miniprogram-svg-icons)
+
+---
+
+、、
+
+## wx-icon-cleaner
+
 A tool for cleaning unused icons from WeChat Mini Programs.
 
 ## 背景
